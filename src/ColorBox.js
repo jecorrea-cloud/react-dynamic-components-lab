@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 
-export default class ColorBox extends Component {
-
-  state = {
-    todos: [
-      
-    ]
-  }
+export default class ColorBox extends Component{
+ 
+    state = {
+      todos: [
+      ]
+    }
+  
 
   render() {
-    return (
-      <div className="color-box" style={{opacity: null /*replace null with the value*/}}>
-        {/* your conditional code here! */}
+    let opacityLvl = this.props.opacity
+    return(
+      <div className={"color-box"} style={{opacity: this.props.opacity }}>
+        
+        {
+          return (opacityLvl >= 0.2) ? <div className={"color-box"} style={{opacity: this.props.opacity }}></div> : null 
+        }
       </div>
     )
   }
